@@ -52,7 +52,7 @@ elif(app_mode=="Prediction"):
         label=[]
         for i in content:
             label.append(i[:-1])
-        #st.success("Model is predicting it's a ".format(label[result_index]))
+        st.success("Model is predicting it's a ".format(label[result_index]))
 
 
 
