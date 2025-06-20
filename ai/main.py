@@ -14,7 +14,7 @@ def model_prediction(test_image):
 
 #sidebar
 st.sidebar.title("DASHBOARD")
-app_mode=st.sidebar.selectbox("Select Page",["Home","About Project","Prediction"])
+app_mode=st.sidebar.selectbox("Select Page",["Home","Prediction","About Project"])
 
 #main page
 if(app_mode=="Home"):
@@ -22,23 +22,11 @@ if(app_mode=="Home"):
     image_path="fruitCbM.jpg"
     st.image(image_path)
 
-#about project
-elif(app_mode=="About Project"):
-    st.header("About Project")
-    st.subheader("About Dataset")
-    st.text("This dataset encompasses images of various fruits and vegetables, providing a diverse collection for image recognition tasks. The included food items are:")
-    st.code("Fruits: Banana, Apple, Pear, Grapes, Orange, Kiwi, Watermelon, Pomegranate, Pineapple, Mango")
-    st.code("Vegetables: Cucumber, Carrot, Capsicum, Onion, Potato, Lemon, Tomato, Radish, Beetroot, Cabbage, Lettuce, Spinach, Soybean, Cauliflower, Bell Pepper, Chilli Pepper, Turnip, Corn, Sweetcorn, Sweet Potato, Paprika, Jalapeño, Ginger, Garlic, Peas, Eggplant")
-    st.text("")
-    st.text("The dataset is organized into three main folders:")
-    st.text("1. Train: Contains 100 images per category.")
-    st.text("2. Test: Contains 10 images per category.")
-    st.text("3. Validation: Contains 10 images per category.")
-    st.text("Each of these folders is subdivided into specific folders for each type of fruit and vegetable, containing respective images.")
-
 #prediction page
 elif(app_mode=="Prediction"):
     st.header("Predictor")
+    image_path="fruitCbM.jpg"
+    st.image(image_path)
     test_image = st.file_uploader("Choose an image:")
     if(st.button("Show Image")):
         st.image(test_image, width=4,use_container_width=True)
@@ -54,7 +42,28 @@ elif(app_mode=="Prediction"):
             label.append(i[:-1])
         st.success("Model is predicting it's a {}".format(label[result_index]))
 
-
+#about project
+elif(app_mode=="About Project"):
+    st.header("Deepfruitveg: Automated Fruit And Veg Identification")
+    image_path="fruitCbM.jpg"
+    st.image(image_path)
+    st.subheader("Category:")
+    st.text("Deep Learning")
+    st.subheader("Skills Required:")
+    st.text("Python,CNN,Bootstrap,Deep Learning,Transfer learning,Streamlit")
+    st.subheader("Project Description:")
+    st.text("Deepfruitveg is an innovative automated system utilizing advanced deep learning algorithms to identify various fruits and vegetables. By analyzing visual characteristics from images, this technology streamlines the identification process, benefiting industries like agriculture, food processing, and retail. With its ability to accurately classify produce, Deepfruitveg enhances efficiency and quality control in diverse settings.")
+    st.subheader("Dataset:")
+    st.text("This dataset encompasses images of various fruits and vegetables, providing a diverse collection for image recognition tasks. The included food items are:")
+    st.code("Fruits: Banana, Apple, Pear, Grapes, Orange, Kiwi, Watermelon, Pomegranate, Pineapple, Mango")
+    st.code("Vegetables: Cucumber, Carrot, Capsicum, Onion, Potato, Lemon, Tomato, Radish, Beetroot, Cabbage, Lettuce, Spinach, Soybean, Cauliflower, Bell Pepper, Chilli Pepper, Turnip, Corn, Sweetcorn, Sweet Potato, Paprika, Jalapeño, Ginger, Garlic, Peas, Eggplant")
+    st.text("")
+    st.text("The dataset is organized into three main folders:")
+    st.text("1. Train: Contains 100 images per category.")
+    st.text("2. Test: Contains 10 images per category.")
+    st.text("3. Validation: Contains 10 images per category.")
+    st.text("Each of these folders is subdivided into specific folders for each type of fruit and vegetable, containing respective images.")
+    st.subheader("")
 
 
 
