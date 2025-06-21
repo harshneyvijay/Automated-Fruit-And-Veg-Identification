@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Predict | Deepfruitveg{% endblock %}
+{% block content %}
+    <h2>Predictor</h2>
+    <img src="{{ url_for('static', filename='fruitCbM.jpg') }}" class="img-fluid mb-4 rounded shadow" width="1200">
+    <h4>Upload an Image</h4>
+    <form method="POST" enctype="multipart/form-data" class="mt-3">
+        <div class="mb-3">
+            <input type="file" class="form-control" name="image" accept="image/*" required>
+        </div>
+        <button type="submit" class="btn btn-success">Predict</button>
+    </form>
+
+    {% if prediction %}
+        <div class="mt-4">
+            <h4>Prediction: <span class="text-primary">{{ prediction }}</span></h4>
+            <img src="{{ uploaded_image }}" class="img-thumbnail mt-2" width="300">
+        </div>
+    {% endif %}
+{% endblock %}

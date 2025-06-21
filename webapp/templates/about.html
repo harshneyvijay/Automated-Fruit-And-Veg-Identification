@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}About | Deepfruitveg{% endblock %}
+{% block content %}
+    <h2>About the Project</h2>
+    <img src="{{ url_for('static', filename='fruitCbM.jpg') }}" class="img-fluid mb-4 rounded shadow" width="1200">
+
+    <h4>Category:</h4><p>Deep Learning</p>
+    <h4>Skills Required:</h4><p>Python, CNN, Bootstrap, Deep Learning, Transfer learning, Flask, HTML/CSS</p>
+
+    <h4>Description:</h4>
+    <p>Deepfruitveg is an automated system using advanced deep learning models to identify fruits and vegetables from images, designed for applications in agriculture, retail, and food industries.</p>
+
+    <h4>Dataset:</h4>
+    <p>Includes categories such as:</p>
+    <ul>
+        <li>Fruits: Banana, Apple, Pear, Mango, etc.</li>
+        <li>Vegetables: Potato, Tomato, Carrot, Onion, etc.</li>
+    </ul>
+    <p>Organized into Train, Test, and Validation folders.</p>
+{% endblock %}

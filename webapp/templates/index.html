@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Home | Deepfruitveg{% endblock %}
+{% block content %}
+    <div class="text-center">
+        <h1 class="display-5">Fruit and Vegetable Recognition System</h1>
+        <img src="{{ url_for('static', filename='fruitCbM.jpg') }}" class="img-fluid mt-4 rounded shadow" width="700">
+        <p class="mt-4">Identify fruits and vegetables using deep learning.</p>
+        <a href="/predict" class="btn btn-primary mt-3">Try It Now</a>
+    </div>
+{% endblock %}
